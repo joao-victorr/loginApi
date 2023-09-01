@@ -20,7 +20,7 @@ export const loginPost = async (req: Request, res: Response) => {
         if (user) {
             if (user.password == req.body.password) {
 
-                const token = generateToken({id: user.id, name: user.name});
+                // const token = generateToken({id: user.id, name: user.name});
 
                 res.json({status: 200, id: user.id, name: user.name})
                 return;

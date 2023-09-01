@@ -1,4 +1,4 @@
 node_modules
-_html
-.env
 package-lock.json
+.env
+dist

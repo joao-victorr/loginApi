@@ -1,5 +1,5 @@
 import express, { ErrorRequestHandler, Request, Response } from 'express';
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 import path from 'path';
 import Mustache from 'mustache-express';
 import cookieParser from 'cookie-parser';
@@ -13,7 +13,7 @@ const server = express();
 const app = http.createServer(server);
 const io = socketIO(app);
 
-dotenv.config();
+// dotenv.config();
 
 server.use(express.static(path.join(__dirname, "../public")));
 server.use(express.urlencoded({extended: true}));
@@ -53,4 +53,6 @@ const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
 server.use(errorHandler);
 
 
-app.listen(process.env.PORT);
+app.listen({
+    port: 3000
+});

@@ -5,6 +5,10 @@ import { privateRouter } from '../config/passport';
 
 const router = Router();
 
+router.get('/', (req, res) => {
+    res.json("Hello world");
+})
+
 router.get('/ping', (req, res) => {
     res.json({pong: true});
 })
